@@ -1,0 +1,70 @@
+.HomePage {
+	color: black;
+	.content {
+		margin-top: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 2px solid;
+		margin-left: 200px;
+		width: 800px;
+		height: 750px;
+		border: 2px solid white;
+		border-radius: 5px;
+		.cards {
+			width: 550px;
+			height: 650px;
+			background-color: rgba(255, 255, 255, 0.714);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			border-radius: 5px;
+			.cardsContent {
+				.contentClass {
+					display: flex;
+					flex-direction: column;
+					gap: 15px;
+					.card {
+						display: flex;
+						flex-direction: column;
+					}
+					.card1 {
+						display: flex;
+						// input {
+						//   background-color: white;
+						//   color: black;
+						// }
+					}
+					select {
+						width: 480px;
+						height: 30px;
+						background-color: white;
+						color: black;
+						// border: 0.1px solid;
+						border: none;
+						border-radius: 5px;
+					}
+					.input {
+						width: 480px;
+						height: 30px;
+						background-color: white;
+						color: black;
+						// border: 0.1px solid;
+						border: none;
+						border-radius: 5px;
+					}
+					button {
+						width: 480px;
+						height: 30px;
+						background-color: rgb(63, 114, 11);
+						color: white;
+						// border: 0.1px solid;
+						border: none;
+						border-radius: 5px;
+					}
+				}
+			}
+		}
+	}
+}
