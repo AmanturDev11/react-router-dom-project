@@ -73,7 +73,6 @@ const HomePage = ({ setCards }) => {
 									<select
 										value={human}
 										onChange={(e) => setHuman(e.target.value)}>
-										<option value="">Вбирайть вариянт</option>
 										<option value="Male">Male</option>
 										<option value="Girls">Girls</option>
 									</select>
@@ -83,7 +82,6 @@ const HomePage = ({ setCards }) => {
 									<select
 										value={city}
 										onChange={(e) => setCity(e.target.value)}>
-										<option value="">Вбирайть вариянт</option>
 										<option value="Бишкек">Бишкек</option>
 										<option value="Ош">Ош</option>
 										<option value="Баткен">Баткен</option>

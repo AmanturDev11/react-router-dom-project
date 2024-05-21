@@ -1,13 +1,9 @@
-import HomePage from "../pages/HomePage";
-
 const Layout = () => {
 	return (
 		<div>
 			<div>
 				<div>
-					<main>
-						<HomePage />
-					</main>
+					<main></main>
 				</div>
 			</div>
 		</div>
