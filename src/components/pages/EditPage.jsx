@@ -1,241 +1,15 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-// /* eslint-disable react/prop-types */
-// import { useState, useEffect } from "react";
-// import { useParams, useNavigate } from "react-router-dom";
-// import axios from "axios";
-// import scss from "./HomePage.module.scss";
-
-// const url =
-// 	"https://api-v2.elchocrud.pro/api/v1/3f8f95003f4f53789c3cec7810c02d8c/RouterGo";
-
-// const EditPage = ({ getTodos }) => {
-// 	const { id } = useParams();
-// 	const navigate = useNavigate();
-// 	const [formData, setFormData] = useState({
-// 		name: "",
-// 		lastName: "",
-// 		date: "",
-// 		city: "",
-// 		human: "",
-// 	});
-
-// 	useEffect(() => {
-// 		const fetchData = async () => {
-// 			const response = await axios.get(`${url}/${id}`);
-// 			setFormData(response.data);
-// 		};
-// 		fetchData();
-// 	}, [id]);
-
-// 	const handleChange = (e) => {
-// 		const { name, value } = e.target;
-// 		setFormData({ ...formData, [name]: value });
-// 	};
-
-// 	const handleSave = async () => {
-// 		await axios.put(`${url}/${id}`, formData);
-// 		getTodos();
-// 		navigate("/contact");
-// 	};
-
-// 	return (
-// 		<div className={scss.HomePage}>
-// 			<div className="container">
-// 				<div className={scss.content}>
-// 					<div className={scss.cards}>
-// 						<div className={scss.cardsContent}>
-// 							<div className={scss.contentClass}>
-// 								<div className={scss.card}>
-// 									<label htmlFor="name">First Name</label>
-// 									<input
-// 										className={scss.input}
-// 										type="text"
-// 										name="name"
-// 										value={formData.name}
-// 										onChange={handleChange}
-// 									/>
-// 								</div>
-// 								<div className={scss.card}>
-// 									<label htmlFor="lastName">Last Name</label>
-// 									<input
-// 										className={scss.input}
-// 										type="text"
-// 										name="lastName"
-// 										value={formData.lastName}
-// 										onChange={handleChange}
-// 									/>
-// 								</div>
-// 								<div className={scss.card}>
-// 									<label htmlFor="human">Gender</label>
-// 									<select
-// 										name="human"
-// 										value={formData.human}
-// 										onChange={handleChange}>
-// 										<option value="">Choose an option</option>
-// 										<option value="Male">Male</option>
-// 										<option value="Female">Female</option>
-// 									</select>
-// 								</div>
-// 								<div className={scss.card}>
-// 									<label htmlFor="city">City of Birth</label>
-// 									<select
-// 										name="city"
-// 										value={formData.city}
-// 										onChange={handleChange}>
-// 										<option value="">Choose an option</option>
-// 										<option value="Bishkek">Bishkek</option>
-// 										<option value="Osh">Osh</option>
-// 										<option value="Batken">Batken</option>
-// 									</select>
-// 								</div>
-// 								<div className={scss.card1}>
-// 									<label htmlFor="date">Date of Birth</label>
-// 									<input
-// 										type="date"
-// 										name="date"
-// 										value={formData.date}
-// 										onChange={handleChange}
-// 									/>
-// 								</div>
-// 								<button onClick={handleSave}>Save</button>
-// 							</div>
-// 						</div>
-// 					</div>
-// 				</div>
-// 			</div>
-// 		</div>
-// 	);
-// };
-
-// export default EditPage;
-
-// !!!!
-
-// import { useState, useEffect } from "react";
-// import { useParams, useNavigate } from "react-router-dom";
-// import axios from "axios";
-// import scss from "./HomePage.module.scss";
-
-// const url =
-// 	"https://api-v2.elchocrud.pro/api/v1/3f8f95003f4f53789c3cec7810c02d8c/RouterGo";
-
-// const EditPage = ({ getTodos }) => {
-// 	const { id } = useParams();
-// 	const navigate = useNavigate();
-// 	const [formData, setFormData] = useState({
-// 		name: "",
-// 		lastName: "",
-// 		date: "",
-// 		city: "",
-// 		human: "",
-// 	});
-
-// 	useEffect(() => {
-// 		const fetchData = async () => {
-// 			try {
-// 				const response = await axios.get(`${url}/${id}`);
-// 				setFormData(response.data);
-// 			} catch (error) {
-// 				console.error("Failed to fetch data", error);
-// 			}
-// 		};
-// 		fetchData();
-// 	}, [id]);
-
-// 	const handleChange = (e) => {
-// 		const { name, value } = e.target;
-// 		setFormData({ ...formData, [name]: value });
-// 	};
-
-// 	const handleSave = async (id) => {
-// 		try {
-// 			await axios.put(`${url}/${id}`, formData);
-// 			getTodos();
-// 			navigate("/contact");
-// 		} catch (error) {
-// 			console.error("Failed to save data", error);
-// 		}
-// 	};
-
-// 	return (
-// 		<div className={scss.HomePage}>
-// 			<div className="container">
-// 				<div className={scss.content}>
-// 					<div className={scss.cards}>
-// 						<div className={scss.cardsContent}>
-// 							<div className={scss.contentClass}>
-// 								<div className={scss.card}>
-// 									<label htmlFor="name">First Name</label>
-// 									<input
-// 										className={scss.input}
-// 										type="text"
-// 										name="name"
-// 										value={formData.name}
-// 										onChange={handleChange}
-// 									/>
-// 								</div>
-// 								<div className={scss.card}>
-// 									<label htmlFor="lastName">Last Name</label>
-// 									<input
-// 										className={scss.input}
-// 										type="text"
-// 										name="lastName"
-// 										value={formData.lastName}
-// 										onChange={handleChange}
-// 									/>
-// 								</div>
-// 								<div className={scss.card}>
-// 									<label htmlFor="human">Gender</label>
-// 									<select
-// 										name="human"
-// 										value={formData.human}
-// 										onChange={handleChange}>
-// 										<option value="Male">Male</option>
-// 										<option value="Female">Female</option>
-// 									</select>
-// 								</div>
-// 								<div className={scss.card}>
-// 									<label htmlFor="city">City of Birth</label>
-// 									<select
-// 										name="city"
-// 										value={formData.city}
-// 										onChange={handleChange}>
-// 										<option value="Bishkek">Bishkek</option>
-// 										<option value="Osh">Osh</option>
-// 										<option value="Batken">Batken</option>
-// 									</select>
-// 								</div>
-// 								<div className={scss.card1}>
-// 									<label htmlFor="date">Date of Birth</label>
-// 									<input
-// 										type="date"
-// 										name="date"
-// 										value={formData.date}
-// 										onChange={handleChange}
-// 									/>
-// 								</div>
-// 								<button onClick={() => handleSave(formData._id)}>Save</button>
-// 							</div>
-// 						</div>
-// 					</div>
-// 				</div>
-// 			</div>
-// 		</div>
-// 	);
-// };
-
-// export default EditPage;
-
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import scss from "./HomePage.module.scss";
+import styled from "styled-components";
 
 const url =
 	"https://api-v2.elchocrud.pro/api/v1/3f8f95003f4f53789c3cec7810c02d8c/RouterGo";
 
 const EditPage = ({ getTodos }) => {
-	const { id,  } = useParams();
+	const { id } = useParams();
 	const navigate = useNavigate();
 	const [formData, setFormData] = useState({
 		name: "",
@@ -263,79 +37,73 @@ const EditPage = ({ getTodos }) => {
 	};
 
 	const handleSave = async () => {
-		if (
-			!formData.name ||
-			!formData.lastName ||
-			!formData.date ||
-			!formData.city ||
-			!formData.human
-		) {
-			alert("All fields are required");
-			return;
-		}
+		const { _id, ...updatedData } = formData;
 
 		try {
-			console.log("Payload to be sent:", formData); // Log the payload
-			const response = await axios.put(`${url}/${id}`, formData);
-			console.log("Server response:", response); // Log the server response
+			console.log("Payload to be sent:", updatedData);
+			const response = await axios.put(`${url}/${id}`, updatedData);
+			console.log("Server response:", response);
 			getTodos();
 			navigate("/contact");
 		} catch (error) {
 			console.error(error);
+			if (error.response) {
+				console.error("Server responded with an error", error.response.data);
+			} else if (error.request) {
+				console.error("No response received", error.request);
+			} else {
+				console.error("Error setting up request", error.message);
+			}
 		}
 	};
 
 	return (
-		<div className={scss.HomePage}>
+		<EditPages>
 			<div className="container">
-				<div className={scss.content}>
-					<div className={scss.cards}>
-						<div className={scss.cardsContent}>
-							<div className={scss.contentClass}>
-								<div className={scss.card}>
+				<Content>
+					<Cards>
+						<div>
+							<ContentClass>
+								<Card>
 									<label htmlFor="name">First Name</label>
-									<input
-										className={scss.input}
+									<Input
 										type="text"
 										name="name"
 										value={formData.name}
 										onChange={handleChange}
 									/>
-								</div>
-								<div className={scss.card}>
+								</Card>
+								<Card>
 									<label htmlFor="lastName">Last Name</label>
-									<input
-										className={scss.input}
+									<Input
 										type="text"
 										name="lastName"
 										value={formData.lastName}
 										onChange={handleChange}
 									/>
-								</div>
-								<div className={scss.card}>
+								</Card>
+								<Card>
 									<label htmlFor="human">Gender</label>
 									<select
 										name="human"
 										value={formData.human}
 										onChange={handleChange}>
-										<option value="">Choose an option</option>
 										<option value="Male">Male</option>
 										<option value="Female">Female</option>
 									</select>
-								</div>
-								<div className={scss.card}>
-									<label htmlFor="city">City of Birth</label>
+								</Card>
+								<Card>
+									<label htmlFor="city">Город рождения</label>
 									<select
 										name="city"
 										value={formData.city}
 										onChange={handleChange}>
-										<option value="">Choose an option</option>
-										<option value="Bishkek">Bishkek</option>
-										<option value="Osh">Osh</option>
-										<option value="Batken">Batken</option>
+										<option value="Бишкек">Бишкек</option>
+										<option value="Ош">Ош</option>
+										<option value="Баткен">Баткен</option>
 									</select>
-								</div>
-								<div className={scss.card1}>
+								</Card>
+								<Card1>
 									<label htmlFor="date">Date of Birth</label>
 									<input
 										type="date"
@@ -343,15 +111,93 @@ const EditPage = ({ getTodos }) => {
 										value={formData.date}
 										onChange={handleChange}
 									/>
-								</div>
+								</Card1>
 								<button onClick={handleSave}>Save</button>
-							</div>
+								<Link to="/contact">
+									<button>Отмена</button>
+								</Link>
+							</ContentClass>
 						</div>
-					</div>
-				</div>
+					</Cards>
+				</Content>
 			</div>
-		</div>
+		</EditPages>
 	);
 };
 
 export default EditPage;
+
+const EditPages = styled.div`
+	color: black;
+`;
+
+const Content = styled.div`
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid;
+	margin-left: 200px;
+	width: 800px;
+	height: 750px;
+	border: 2px solid white;
+	border-radius: 5px;
+`;
+
+const Cards = styled.div`
+	width: 550px;
+	height: 650px;
+	background-color: rgba(255, 255, 255, 0.714);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 5px;
+`;
+
+const ContentClass = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	select {
+		width: 480px;
+		height: 30px;
+		background-color: white;
+		color: black;
+		border: none;
+		border-radius: 5px;
+	}
+	button {
+		width: 480px;
+		height: 30px;
+		background-color: rgb(63, 114, 11);
+		color: white;
+		border: none;
+		border-radius: 5px;
+		font-weight: 600;
+		transition: 0.4s;
+		&:hover {
+			box-shadow: 0px 0px 9px black;
+			transform: scale(1.1);
+			text-shadow: 0px 0px 10px #00000096;
+			color: #800080;
+		}
+	}
+`;
+
+const Input = styled.input`
+	width: 480px;
+	height: 30px;
+	background-color: white;
+	color: black;
+	border: none;
+	border-radius: 5px;
+`;
+
+const Card = styled.div`
+	display: flex;
+	flex-direction: column;
+`;
+const Card1 = styled.div`
+	display: flex;
+`;
